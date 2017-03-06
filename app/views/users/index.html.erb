@@ -1,0 +1,8 @@
+<div id="tag_line" class="medium-offset-4 medium-11 columns">All the people sharing cool new places to EAT in NYC!:
+
+<ul>
+	<% @user.each do |user| %>
+		<li><%= user.first_name %> <%= user.last_name %></li>
+	<% end %>
+</ul>
+</div>

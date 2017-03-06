@@ -1,0 +1,7 @@
+<div class="medium-12 columns">
+	<div class="medium-offset-4 medium-4 columns">
+		<% @post.each do |post| %>
+			<div class="post_div medium-12 columns" id="post<%= post.id %>"><%= post.user.user_name %> posted:</br>"<%= post.name %>"</br></br>"<%= post.address %>"</br></br>"<%= post.website %>"</br></br>"<%= post.favorite_dish %>"</br></br>"<%= post.message %>"</br>on <%= post.created_at.to_formatted_s(:long) %></br><a href="http://localhost:3000/posts/<%= post.id %>/edit">Edit</a></div></br>
+		<% end %>
+	</div>
+</div>

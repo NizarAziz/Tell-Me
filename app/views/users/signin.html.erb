@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 col-centered text-center">
+    <h1 class="sign">Tell Me NOW! Please, lol.</h1>
+      <br>
+    <%= form_tag("/signin", method: "post") do %>
+    <p class="signin">
+      <%= label_tag(:username, "Username") %>
+      <br/>
+      <%= text_field_tag(:username) %><br>
+      <br/>
+      <%= label_tag(:password, "Password") %>
+      <br/>
+      <%= password_field_tag(:password) %>
+    </p>
+      <br/>
+      <%= submit_tag("Sign in", :class => "btn-danger") %>
+    <% end %>
+  <%= @message %>
+  </div>
+</div>

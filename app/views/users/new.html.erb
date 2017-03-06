@@ -1,0 +1,41 @@
+<div id="new_user_container" class="medium-12 columns new_container">
+	<%= form_for @user, html: {id: :new_user_form, :class => "medium-offset-4 medium-4 columns"} do |f| %>
+		Sign up and get started!
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name, :class => "input_field" %>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, :class => "input_field" %>
+		<%= f.label :email %>
+		<%= f.text_field :email, :class => "input_field" %>
+		<%= f.label :user_name %>
+		<%= f.text_field :user_name, :class => "input_field" %>
+		<%= f.submit :Join!, :id => "submit_join" %>
+	<% end %>
+</div>
+
+<script>
+	document.getElementById("submit_join").onclick = function (){
+		var first_name = document.getElementById("user_first_name").value;
+		var last_name = document.getElementById("user_last_name").value;
+		var email = document.getElementById("user_email_address").value;
+		var user_name = document.getElementById("user_user_name").value;
+		if (first_name == "" || last_name == "" || email == "" || user_name == ""){
+			if (first_name == ""){
+				alert("Please enter your first name");
+			}
+			if (last_name == ""){
+				alert("Please enter your last name");
+			}
+			if (email == ""){
+				alert("Please enter your email address");
+			}
+			if (user_name == ""){
+				alert("Please create a user name");
+			}
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+</script>

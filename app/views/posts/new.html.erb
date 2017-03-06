@@ -1,0 +1,53 @@
+<div id="new_post_container" class="medium-12 columns new_container">
+	<%= form_for @post, html: {id: :new_post_form, :class => "medium-offset-4 medium-4 columns"} do |f| %>
+		Got a new place to eat at for us?
+		<%= label_tag "User name" %>
+		<%= text_field_tag :user_name, nil, class: "input_field" %>
+		<%= f.hidden_field :user_id %>
+		<%= f.label :name %>
+		<%= f.text_field :name, :class => "input_field" %>
+		<%= f.label :address %>
+		<%= f.text_field :address, :class => "input_field" %>
+		<%= f.label :website %>
+		<%= f.text_field :website, :class => "input_field" %>
+		<%= f.label :favorite_dish %>
+		<%= f.text_field :favorite_dish, :class => "input_field" %>
+		<%= f.label :message %>
+		<%= f.text_field :message, :class => "input_field" %>
+		<%= f.submit :"Share It!", :id => "submit_post" %>
+	<% end %>
+</div>
+
+<div id="tag_line" class="medium-offset-2 medium-7 columns">New To TELL ME?
+</br>
+	<a href="http://localhost:3000/users/new">Click here</a> to create a profile and get started!.
+</div>
+
+	<script>
+		var usersObject = {};
+		var url = "http://localhost:3000/users/new";
+		
+		"<% @user.each do |user| %>"
+			usersObject["<%= user.user_name %>"] = "<%= user.id %>"
+		"<% end %>"
+		document.getElementById("submit_post").onclick = function (){
+			var user_name = document.getElementById("user_name").value;
+			var message = document.getElementById("post_message").value;
+			if (user_name == "" || message == ""){
+				if (user_name == ""){
+					alert("Please enter a user name");
+				}
+				if (message == ""){
+					alert("Please enter a message")
+				}
+				return false;
+			};
+			if (user_name in usersObject){
+				document.getElementById("post_user_id").value = usersObject[user_name];
+			}
+			else{
+				alert("Sorry, there's no profile for " + user_name + ". Please check that you typed your username correctly (case-sensitive!), or visit "+url+" and sign up if you don't yet have an account.");
+				return false;
+			}
+		}
+	</script>
