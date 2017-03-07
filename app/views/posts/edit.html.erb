@@ -10,7 +10,7 @@
 		<%= f.text_field :favorite_dish, :class => "input_field" %>
 		<%= f.label :message %>
 		<%= f.text_field :message, :class => "input_field" %>
-		<a href="http://localhost:3000/posts">Cancel</a>
+		<a href="https://tmnyc.herokuapp.com/posts">Cancel</a>
 	    <%= f.submit "Save changes" %>
 	<% end %>
 </div>
@@ -20,5 +20,5 @@
 </div>-->
 
 <div class="medium-12 columns">
-	<a class="medium-offset-5 medium-3 columns" href="http://localhost:3000/posts/<%= @post.id %>">Click here to delete this post</a>
+	<a class="medium-offset-5 medium-3 columns" href="https://tmnyc.herokuapp.com/posts/<%= @post.id %>">Click here to delete this post</a>
 </div>

@@ -20,12 +20,12 @@
 
 <div id="tag_line" class="medium-offset-2 medium-7 columns">New To TELL ME?
 </br>
-	<a href="http://localhost:3000/users/new">Click here</a> to create a profile and get started!.
+	<a href="https://tmnyc.herokuapp.com/users/new">Click here</a> to create a profile and get started!.
 </div>
 
 	<script>
 		var usersObject = {};
-		var url = "http://localhost:3000/users/new";
+		var url = "https://tmnyc.herokuapp.com/users/new";
 		
 		"<% @user.each do |user| %>"
 			usersObject["<%= user.user_name %>"] = "<%= user.id %>"
